@@ -95,11 +95,13 @@ class GMailSMTP(SMTP):
 
     GMAIL_SMTP_HOST = 'smtp.googlemail.com'
     GMAIL_SMTP_TLS = True
+    GMAIL_SMTP_PORT = 587
 
     def __init__(self, login=None, password=None):
         super(GMailSMTP, self).__init__(
-            self.GMAIL_SMTP_HOST, tls=self.GMAIL_SMTP_TLS, login=login,
-            password=password
+            self.GMAIL_SMTP_HOST, port=self.GMAIL_SMTP_PORT,
+            tls=self.GMAIL_SMTP_TLS,
+            login=login, password=password
         )
 
 
